@@ -435,9 +435,9 @@ CLASS ltcl_unit_test IMPLEMENTATION.
 
     cl_abap_unit_assert=>assert_equals(
       act = sy-uname
-      exp = z2ui5_cl_util=>user_get_tech( ) ).
+      exp = z2ui5_cl_util=>context_get_user_tech( ) ).
 
-    cl_abap_unit_assert=>assert_not_initial( z2ui5_cl_util=>user_get_tech( ) ).
+    cl_abap_unit_assert=>assert_not_initial( z2ui5_cl_util=>context_get_user_tech( ) ).
 
   ENDMETHOD.
 

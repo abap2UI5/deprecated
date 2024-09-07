@@ -59,7 +59,7 @@ CLASS z2ui5_cl_pop_transport DEFINITION
     CLASS-METHODS get_e071k_tabkey
       IMPORTING
         !line            TYPE any
-        dfies            TYPE z2ui5_cl_stmpncfctn_api=>ty_t_dfies
+        dfies            TYPE z2ui5_cl_util=>ty_t_dfies
       RETURNING
         VALUE(rv_tabkey) TYPE trobj_name.
 
@@ -97,7 +97,7 @@ CLASS z2ui5_cl_pop_transport IMPLEMENTATION.
 
   METHOD on_init.
 
-    IF z2ui5_cl_util=>rtti_check_lang_version_cloud( ) = abap_true.
+    IF z2ui5_cl_util=>context_check_abap_cloud( ) = abap_true.
       get_tr_cloud( ).
     ELSE.
       get_tr_onprem( ).
@@ -162,7 +162,7 @@ CLASS z2ui5_cl_pop_transport IMPLEMENTATION.
 
   METHOD add_DATA_to_tranport.
 
-    IF z2ui5_cl_util=>rtti_check_lang_version_cloud( ) = abap_false.
+    IF z2ui5_cl_util=>context_check_abap_cloud( ) = abap_false.
 *      add_to_transport_cloud( ir_data      = ir_data
 *                              iv_tabname   = iv_tabname
 *                              is_transport = is_transport ).

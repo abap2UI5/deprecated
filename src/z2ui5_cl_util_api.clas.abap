@@ -1,7 +1,7 @@
 CLASS z2ui5_cl_util_api DEFINITION
   PUBLIC
   CREATE PUBLIC
-  INHERITING FROM z2ui5_cl_stmpncfctn_api.
+  INHERITING FROM z2ui5_cl_abap_api.
 
   PUBLIC SECTION.
 
@@ -30,15 +30,6 @@ CLASS z2ui5_cl_util_api DEFINITION
       BEGIN OF ty_s_sql_result,
         table TYPE string,
       END OF ty_s_sql_result.
-
-    TYPES:
-      BEGIN OF ty_s_fix_val,
-        low   TYPE string,
-        high  TYPE string,
-        descr TYPE string,
-      END OF ty_s_fix_val.
-    TYPES ty_t_fix_val TYPE STANDARD TABLE OF ty_s_fix_val WITH EMPTY KEY.
-
 
 
     CLASS-METHODS rtti_get_t_attri_by_include
